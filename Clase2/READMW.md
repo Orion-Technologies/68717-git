@@ -29,3 +29,14 @@ Para cambiar el editor de git
 ```sh
 git config --global core.editor "nano"
 ```
+
+Más información en este link
+
+*https://learning.oreilly.com/library/view/gitlab-cookbook/9781783986842/apas07.html#:~:text=The%20first%20is%20via%20the,with%20your%20editor%20of%20choice!*
+
+## Ver todos los commits
+
+```sh
+git log
+```
+dentro de log se puede usar "/" como buscador de palabras claves
