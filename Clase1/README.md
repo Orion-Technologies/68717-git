@@ -1,20 +1,20 @@
 # Git Desarrollo Markdown
 
-## Clase 01 😎
+## Clase 01
 
-### Verificar que tengo instalado git
+### Verificar que tengo instaldo git
 
 ```sh
-git --version (snipet)
+git --version
 ```
 
-```js
-function sumar(a, b) {
-    return a + b;
-}
-```
+---
 
 ### Markdown
+Me permite documentar y tomar apuntes... Es un lenguaje de marcas, pariente del html
+
+#### Títulos
+
 # h1
 ## h2
 ### h3
@@ -22,35 +22,70 @@ function sumar(a, b) {
 ##### h5
 ###### h6
 
-### Listas ordenadas
+#### Listas ordenadas
 
 1. Primer paso
 2. Segundo paso
 3. Tercer paso
 
-### Listas desordenadas
+#### Lista desordenada
 
-* item 1
-* item 2
-* item 3
+* Item
+* Item
+* Item
 
 ---
 
 ## GIT
 
-### Inicializo in repositorio de GIt
+### Configuración inicial
+
+
+> Agrego el usuario
 
 ```sh
-git init # crea una carpeta del proyecto. '.git' en el directorio.
+git config --global user.name "Maximiliano Principe" # Global (Para todos los repos que se creen en este equipo)
+
+git config --local user.name "Maximiliano Principe" # Local (Para este único repos) Este comando se tiene que ejecutar luego de haber creado un repositorio
+```
+
+> Agrego un correo
+
+```sh
+git config --global user.email "mlapeducacionit@gmail.com" # Global (Para todos los repos que se creen en este equipo)
+
+git config --local user.email "mlapeducacionit@gmail.com" # Local (Para este único repos) Este comando se tiene que ejecutar luego de haber creado un repositorio
+```
+
+> Verificar las configuraciones hechas
+
+```
+git config --global --get-regexp user
+```
+
+**Nota**: Si por algun motivo ingresan el comando anterior y les abre un editor. Para salir. Ingresar en la consola :q => quit
+
+### Inicializo un repositorio de GIT
+
+```sh
+git init # Va a crear en la carpeta del proyecto una carpeta  '.git' en el directorio (carpeta)
+```
+
+**IMPORTANTE**: No hay que borrar la carpeta .git, ni hay que modificar archivos dentro de ella. Solo trabaja git sobre esa carpeta, no nosotros
+
+## Limpiar consola
+
+```sh
+clear
 ```
 
 ### GIT STATUS
-¿Qué hace? Verifica el estado de los archivos. Los estados pueden ser:
+¿Qué hace? Verifica el estado de los archivos. Porque los archivos pueden estar en varios estados
 
-* UNTRACKED: Los archivos aún  no estan en el working directory (WD) y no estan siendo seguidos.
+* UNTRACKED: Que los archivos aún estan en el working directory (WD) y no están siendo seguidos (controlados) por GIT.
 
-* STAGED: Archivos que estan preparados para commit (snapshot) y preservar los cambios hechos.
+* STAGED: Archivos que están preparando para crear el commit (Sacar la foto) el snapshot y preservar los cambios hechos de mi código fuente.
 
-* UNMODIFIED: Si el archivo es detectado com osin cambios (sin modificaciones) es porque gir esta verificando que lo que tieneel WD con respecto al RL es lo mismo,
+* UNMODIFIED: Si el archivo es detectado como sin cambios (sin modificaciones) es porque git está verificando que lo que tiene el WD con respecto al RL es lo mismo.
 
-* MODIFIED: Si aparece modifed en el WD esta modificado con respecto a lo que se tiene en el repo(LR).
+* MODIFIED: Si me aparece *modified* el archivo en el WD esta modificado con respecto a lo que tengo en el repositorio local (RL)
