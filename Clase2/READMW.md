@@ -23,3 +23,9 @@ El **.gitignore** regularmente va en la raiz pero puede ir en cualquier lugar.
 Se puede tener varios **.gitignore** para evitar rutas largar
 
 > capeta1/carpeta2/carpeta3/...
+
+Para cambiar el editor de git
+
+```sh
+git config --global core.editor "nano"
+```
